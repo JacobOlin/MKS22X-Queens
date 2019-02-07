@@ -9,4 +9,12 @@ public class QueenBoard{
       }
     }
   }
+
+  private boolean addQueen(int r, int c) {
+    return true;
+  }
+
+  private boolean removeQueen(int r, int c) {
+    return true;
+  }
 }
