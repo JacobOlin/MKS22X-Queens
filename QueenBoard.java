@@ -15,6 +15,9 @@ public class QueenBoard{
       return false;
     }
     board[r][c] = -1;
+    for (int i = c + 1;i < board[r].length;i += 1) {
+      board[r][c] += 1;
+    }
     return true;
   }
 
@@ -23,6 +26,9 @@ public class QueenBoard{
       return false;
     }
     board[r][c] = 0;
+    for (int i = c + 1;i < board[r].length;i += 1) {
+      board[r][c] -= 1;
+    }
     return true;
   }
 }
