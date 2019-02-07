@@ -19,6 +19,10 @@ public class QueenBoard{
   }
 
   private boolean removeQueen(int r, int c) {
+    if (board[r][c] >= 0) {
+      return false;
+    }
+    board[r][c] = 0;
     return true;
   }
 }
