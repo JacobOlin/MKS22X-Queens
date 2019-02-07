@@ -11,10 +11,10 @@ public class QueenBoard{
   }
 
   private boolean addQueen(int r, int c) {
-    if(board[r][c] >= 0) {
+    if(board[r][c] > 0) {
       return false;
     }
-    board[r][c] = 0;
+    board[r][c] = -1;
     return true;
   }
 
