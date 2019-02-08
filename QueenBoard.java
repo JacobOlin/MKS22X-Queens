@@ -77,11 +77,20 @@ public class QueenBoard{
   }
 
   public boolean solve() {
-    return true;
+    return helper(0);
   }
 
-  private boolean helper() {
-    return true;
+  private boolean helper(int r) {
+    boolean a = false;
+    for (int c = 0;c < board.length;c += 1) {
+      if (board[r][c] == 0) {
+        if (r + 1 == board.length) {
+          return true;
+        }
+        a = a || helper(r + 1);
+      }
+    }
+    return false;
   }
 
 }
