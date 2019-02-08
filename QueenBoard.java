@@ -75,5 +75,13 @@ public class QueenBoard{
     }
     return ans;
   }
-  
+
+  public boolean solve() {
+    return true;
+  }
+
+  private boolean helper() {
+    return true;
+  }
+
 }
