@@ -84,13 +84,18 @@ public class QueenBoard{
     boolean a = false;
     for (int c = 0;c < board.length;c += 1) {
       if (board[r][c] == 0) {
+        addQueen(r,c);
         if (r + 1 == board.length) {
           return true;
         }
         a = a || helper(r + 1);
+        removeQueen(r,c);
       }
     }
-    return false;
+    if (r + 1 == board.length) {
+      return a;
+    }
+    return helper(r-1);
   }
 
 }
