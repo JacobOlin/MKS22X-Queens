@@ -59,4 +59,21 @@ public class QueenBoard{
     }
     return ans;
   }
+
+  public String toString() {
+    String ans = "";
+    for (int i = 0;i < board.length;i += 1) {
+      for (int j = 0;j < board[i].length;j += 1) {
+        if (board[i][j] == -1) {
+          ans += "Q ";
+        }
+        else {
+          ans += "_ ";
+        }
+      }
+      ans += "\n";
+    }
+    return ans;
+  }
+  
 }
