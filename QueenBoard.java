@@ -80,22 +80,19 @@ public class QueenBoard{
     return helper(0);
   }
 
-  private boolean helper(int r) {
-    boolean a = false;
-    for (int c = 0;c < board.length;c += 1) {
-      if (board[r][c] == 0) {
-        addQueen(r,c);
-        if (r + 1 == board.length) {
+  private boolean helper(int col) {
+    if (col >= board.length) {
+      return true;
+    }
+    for (int r = 0;r < board.length;r += 1) {
+      if (addQueen(r,col)) {
+        if (helper(col+1)) {
           return true;
         }
-        a = a || helper(r + 1);
-        removeQueen(r,c);
+        removeQueen(r,col);
       }
     }
-    if (r + 1 == board.length) {
-      return a;
-    }
-    return helper(r-1);
+    return false;
   }
 
 }
