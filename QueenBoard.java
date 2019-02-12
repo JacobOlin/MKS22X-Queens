@@ -114,7 +114,16 @@ public class QueenBoard{
   }
 
   public int countHelper(int col,int count) {
-    return 0;
+    if (col >= board.length) {
+      count += 1;
+    }
+    for (int r = 0;r < board.length;r += 1) {
+      if (addQueen(r,col)) {
+        count += countHelper(col,count);
+        removeQueen(r,col);
+      }
+    }
+    return count;
   }
 
 }
