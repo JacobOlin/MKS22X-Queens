@@ -110,11 +110,7 @@ public class QueenBoard{
         }
       }
     }
-    int a = countHelper(0,0);
-    if (a > 1) {
-      return a - 1;
-    }
-    return a;
+    return countHelper(0,0);
   }
 
   public int countHelper(int col,int count) {
@@ -123,8 +119,9 @@ public class QueenBoard{
     }
     for (int r = 0;r < board.length;r += 1) {
       if (r < board.length && col < board.length && addQueen(r,col)) {
-        if (countHelper(col+1,count) > 0) {
-          count += 1;
+        if (countHelper(col + 1,count) > 0) {
+          //System.out.println("R: " + r + " C:" + col + " Count: " + count);
+          count = countHelper(col + 1,count);
         }
         removeQueen(r,col);
       }
