@@ -118,7 +118,7 @@ public class QueenBoard{
       count += 1;
     }
     for (int r = 0;r < board.length;r += 1) {
-      if (addQueen(r,col)) {
+      if (r < board.length && col < board.length && addQueen(r,col)) {
         count += countHelper(col + 1,count);
         removeQueen(r,col);
       }
