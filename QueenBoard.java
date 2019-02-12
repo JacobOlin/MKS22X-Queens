@@ -77,6 +77,13 @@ public class QueenBoard{
   }
 
   public boolean solve() {
+    for (int i = 0;i < board.length;i += 1) {
+      for (int j = 0;j < board[i].length;j += 1) {
+        if (board[i][j] != 0) {
+          throw new IllegalStateException();
+        }
+      }
+    }
     return helper(0);
   }
 
