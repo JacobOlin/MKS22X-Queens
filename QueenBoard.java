@@ -102,4 +102,12 @@ public class QueenBoard{
     return false;
   }
 
+  public int countSolutions() {
+    return 0;
+  }
+
+  public int countHelper(int col,int count) {
+    return 0;
+  }
+
 }
