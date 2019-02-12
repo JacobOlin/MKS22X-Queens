@@ -110,7 +110,11 @@ public class QueenBoard{
         }
       }
     }
-    return countHelper(0,0);
+    int a = countHelper(0,0);
+    if (a > 1) {
+      return a - 1;
+    }
+    return a;
   }
 
   public int countHelper(int col,int count) {
@@ -119,7 +123,9 @@ public class QueenBoard{
     }
     for (int r = 0;r < board.length;r += 1) {
       if (r < board.length && col < board.length && addQueen(r,col)) {
-        count += countHelper(col + 1,count);
+        if (countHelper(col+1,count) > 0) {
+          count += 1;
+        }
         removeQueen(r,col);
       }
     }
