@@ -103,7 +103,14 @@ public class QueenBoard{
   }
 
   public int countSolutions() {
-    return 0;
+    for (int i = 0;i < board.length;i += 1) {
+      for (int j = 0;j < board[i].length;j += 1) {
+        if (board[i][j] != 0) {
+          throw new IllegalStateException();
+        }
+      }
+    }
+    return countHelper(0,0);
   }
 
   public int countHelper(int col,int count) {
