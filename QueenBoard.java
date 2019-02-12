@@ -119,7 +119,7 @@ public class QueenBoard{
     }
     for (int r = 0;r < board.length;r += 1) {
       if (addQueen(r,col)) {
-        count += countHelper(col,count);
+        count += countHelper(col + 1,count);
         removeQueen(r,col);
       }
     }
